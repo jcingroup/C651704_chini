@@ -24,8 +24,8 @@ namespace Work.WebProj
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/grid.css",
+                      "~/Content/css/vendor/open-iconic.css"));
         }
     }
 }

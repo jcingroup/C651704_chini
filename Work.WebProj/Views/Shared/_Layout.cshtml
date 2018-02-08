@@ -1,43 +1,124 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @* <meta name="viewport" content="width=device-width, initial-scale=1.0"> *@
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>@ViewBag.Title - 長興法律事務所</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+@if (ViewBag.IsFirstPage)
+{
+    <link rel="stylesheet" href="~/Content/css/index.css">
+}
+else
+{
+    <link rel="stylesheet" href="~/Content/css/page.css">
+}
+    @RenderSection("Styles", false)
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("應用程式名稱", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Home")</li>
-                    <li>@Html.ActionLink("關於", "About", "Home")</li>
-                    <li>@Html.ActionLink("連絡方式", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </div>
+<body class="@ViewBag.BodyClass">
+    <div id="wrapper">
+        <header id="header">
+            <h1 class="logo" onclick="location.href='@Url.Content("~/Home")'" title="回首頁" tabindex="-1">
+                長興法律事務所
+            </h1>
+            <nav id="menu" class="navbar">
+                @Html.ActionLink("簡介", "AboutUs", "Home", null, (ViewBag.BodyClass == "AboutUs") ? new { @class = "current" } : new { @class = "" })
+                @Html.ActionLink("專業團隊", "Lawyers", "Home", null, (ViewBag.BodyClass == "Lawyers") ? new { @class = "current" } : new { @class = "" })
+                @Html.ActionLink("專業領域", "Service", "Home", null, (ViewBag.BodyClass == "Service") ? new { @class = "current" } : new { @class = "" })
+                <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
+                @Html.ActionLink("連絡我們", "ContactUs", "Home", null, (ViewBag.BodyClass == "ContactUs") ? new { @class = "current" } : new { @class = "" })
+            </nav>
+        </header>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+        @RenderBody()
+
+    </div><!-- wrapper //-->
+
+    <a href="#header" class="goTop oi" data-glyph="chevron-top" title="TOP"></a>
+
+    <footer id="footer">
+        <section class="slogan">講實理．求實材而重實用</section>
+        <section class="foot-contact row row-x-0">
+            <h1 class="logo-s">長興法律事務所</h1>
+            <article class="col-md-11 offset-md-1">
+                <p class="col-md-4"></p>
+                <ul class="list-unstyled col-md-4">
+                    <li><em>T</em>886-3-4222325</li>
+                    <li><em>F</em>886-3-4250813</li>
+                    <li><em>E</em>lawyer@chini.idv.tw</li>
+                </ul>
+            </article>
+            <hr>
+            <article class="col-md-11 offset-1">
+                <nav class="foot-menu col-md-4">
+                    @Html.ActionLink("簡介", "AboutUs", "Home", null, (ViewBag.BodyClass == "AboutUs") ? new { @class = "current" } : new { @class = "" })
+                    @Html.ActionLink("專業團隊", "Lawyers", "Home", null, (ViewBag.BodyClass == "Lawyers") ? new { @class = "current" } : new { @class = "" })
+                    @Html.ActionLink("專業領域", "Service", "Home", null, (ViewBag.BodyClass == "Service") ? new { @class = "current" } : new { @class = "" })
+                    <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
+                    @Html.ActionLink("連絡我們", "ContactUs", "Home", null, (ViewBag.BodyClass == "ContactUs") ? new { @class = "current" } : new { @class = "" })
+                </nav>
+                <nav class="foot-lawer col-md-4">
+                    <a href="~/Home/Lawyers#p1" class="scroll">呂理胡</a>
+                    <a href="~/Home/Lawyers#p2" class="scroll">唐永洪</a>
+                    <a href="~/Home/Lawyers#p3" class="scroll">張晶瑩</a>
+                    <a href="~/Home/Lawyers#p4" class="scroll">楊雅馨</a>
+                    <a href="~/Home/Lawyers#p5" class="scroll">呂浩瑋</a>
+                </nav>
+            </article>
+        </section>
+        <div class="copyright">&copy; 2008 - @DateTime.Now.Year CHINI LAW FIRM</div>
+    </footer><!-- footer //-->
+
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var $gotoTop = $('.goTop');
+        var $sticky = $('#header'),
+            stickyOffset = $sticky.offset().top;
+
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+
+            // 沒有卷軸時不出現 goTop 按鈕
+            if (scrollTop > 100) { $gotoTop.fadeIn(); }
+            else { $gotoTop.fadeOut(); }
+
+            // 黏住效果
+            if (scrollTop > stickyOffset) { $sticky.addClass('stick'); }
+            else { $sticky.removeClass('stick'); }
+            $('#wrapper').css('padding-top', $sticky.height());
+
+            // for大螢幕
+            if (window.innerWidth >= 1024) { $sticky.css('top', scrollTop); }
+            else { $sticky.removeAttr('style'); }
+        });
+        $(window).resize(function () {
+            if (window.innerWidth >= 1024) { $sticky.css('top', $(window).scrollTop()); }
+            else { $sticky.removeAttr('style'); }
+        });
+
+        // 點選後跳到 href 指向的位置
+        $('.scroll').click(function () {
+            var scrollToAnchor = $(this).attr('href');
+            $('html, body').stop(true).animate({
+                scrollTop: $(scrollToAnchor).offset().top - 40
+            }, 750);
+            return false;
+        });
+        $gotoTop.click(function () {
+            $('body, html').stop(true).animate({ scrollTop: 0 }, 800);
+            return false;
+        });
+
+        // 行動裝置的主選單
+        $trigger = $('.mobile-toggle');
+        $trigger.click(function () {
+            $(this).toggleClass('active');
+            $('body').toggleClass('mobile-menu');
+        });
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
