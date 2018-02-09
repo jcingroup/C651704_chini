@@ -35,7 +35,7 @@ $spacing: (
 ) !default;
 
 
-// == base
+// == element
 // ------------------------------------------------------------
 //
 // basic
@@ -67,7 +67,7 @@ $link-transition:                color .35s, background .3s !default;   // 滑�
 // type
 $font-size-h1:                   $font-size-base * 3 !default;       // 48px old-2.5
 $font-size-h2:                   $font-size-base * 2 !default;       // 32px old-2
-$font-size-h3:                   $font-size-base * 1.75 !default;    // 28px old-1.75
+$font-size-h3:                   $font-size-base * 1.6875 !default;  // 27px old-1.75
 $font-size-h4:                   $font-size-base * 1.5 !default;     // 24px old-1.5
 $font-size-h5:                   $font-size-base * 1.125 !default;   // 18px old-1.25
 $font-size-h6:                   $font-size-base * 1.0625 !default;  // 17px old-1
@@ -81,6 +81,7 @@ $headings-margin-bottom:         $spacer*0.75 !default;
 
 $p-spacer:                       spacing(4) !default;  // <p>+<p>才有
 $hr-border:                      1px solid $border-color !default;
+$hr-sapce:                       $spacer*2 0 !default;
 $abbr-color-border:              $border-color !default;
 
 //
@@ -166,6 +167,15 @@ $btn-effect:                     'background .35s, color .5s' !default;
 
 // ==  modules
 // ------------------------------------------------------------
+$font-tiny:                      !default;
+$font-sm:                        !default;
+$font-md:                        !default;
+$font-lg:                        !default;
+$font-xl:                        !default;
+$font-xxl:                       !default;
+$font-xxxl:                      !default;
+$font-jumbo:                     !default;
+
 //
 // field
 $fields-spacer:                  spacing(12) !default; //20px

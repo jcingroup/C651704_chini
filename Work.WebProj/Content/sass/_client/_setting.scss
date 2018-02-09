@@ -11,10 +11,10 @@ $pale-red:                #FFE7E7 !default;
 
 // 情境狀態 + 配色
 $colors: (
-    primary:              #ff761b, // 04828d
-    secondary:            #ed8000,
-    muted:                #dbd6cd,
-    success:              #ffa200,
+    primary:              #f1bc2f, // 04828d
+    secondary:            #513d29,
+    muted:                #b3b3b3,
+    success:              #9e8467,
     info:                 #417fa1, // 30bebc
     warning:              #ffe23f,
     danger:               #FF2200
@@ -24,17 +24,19 @@ $colors: (
 // == custom
 // ----------------------------------------------------------------------
 // basic
-$body-color:                 #000;
-$font-family-sp:             'Julius Sans One', sans-serif;
+$body-bg:                    #fcfaf7;
+$body-color:                 #695f5f;
+$font-family-sp:             false; // 'Montserrat', sans-serif
+$font-family-base:           'Montserrat', \5FAE\8EDF\6B63\9ED1\9AD4,"微軟正黑體","Microsoft JhengHei",'Helvetica Neue',Helvetica,Arial,sans-serif !default;
 
 // link
 $link-color:                 $body-color;
 $link-color-hover:           darken(color(success), 4);
 
-$border-color:               color(secondary);
+$border-color:               #625432;
 $border-radius:              4px;
 
-$hr-border:                  1px solid rgba(#000, .1);
+// $hr-border:                  1px solid rgba($border-color, .4);
 
 // table
 $table-color-border:         rgba(#000, .08);
@@ -95,9 +97,9 @@ $logo-img:              'logo.gif' !default; // 'logo.gif' or false
 $logo-size:             95px 88px !default;
 
 // footer
-$footer-height:         280px !default; //288-拿掉不在規格內的
-$footer-bg:             #aaa !default;
-$footer-color:          #fff !default;
+$footer-height:         510px !default;
+$footer-bg:             #333 !default;
+$footer-color:          #e6e6e6 !default;
 
 // nav
 $sub-nav-has:           false !default;         // 子選單

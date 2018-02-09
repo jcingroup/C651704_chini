@@ -7,7 +7,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>@ViewBag.Title - 長興法律事務所</title>
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300">
+    <link rel="stylesheet" href="~/Content/css/vendor/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/css/grid.css">
 @if (ViewBag.IsFirstPage)
 {
     <link rel="stylesheet" href="~/Content/css/index.css">
@@ -21,103 +23,109 @@ else
 <body class="@ViewBag.BodyClass">
     <div id="wrapper">
         <header id="header">
-            <h1 class="logo" onclick="location.href='@Url.Content("~/Home")'" title="回首頁" tabindex="-1">
-                長興法律事務所
+            <h1 class="logo inline-block" onclick="location.href='@Url.Content("~/Home")'" title="回首頁" tabindex="-1">
+                <span class="text-hide">長興法律事務所</span>
+                <small class="s1 block">CHINI LAW FIRM</small>
+                <small class="s2 block">〔原呂理胡律師事務所〕</small>
             </h1>
-            <nav id="menu" class="navbar">
-                @Html.ActionLink("簡介", "AboutUs", "Home", null, (ViewBag.BodyClass == "AboutUs") ? new { @class = "current" } : new { @class = "" })
-                @Html.ActionLink("專業團隊", "Lawyers", "Home", null, (ViewBag.BodyClass == "Lawyers") ? new { @class = "current" } : new { @class = "" })
-                @Html.ActionLink("專業領域", "Service", "Home", null, (ViewBag.BodyClass == "Service") ? new { @class = "current" } : new { @class = "" })
-                <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
-                @Html.ActionLink("連絡我們", "ContactUs", "Home", null, (ViewBag.BodyClass == "ContactUs") ? new { @class = "current" } : new { @class = "" })
-            </nav>
+            <h2 class="slogan">PROFESSIONAL . INNOVATIVE . EFFICIENT</h2>
+
+            @if (!ViewBag.IsFirstPage) {
+                <nav id="menu">
+                    <a href="~/Home/AboutUs" class='nav-item @(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
+                    <a href="~/Home/Lawyers" class='nav-item @(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a>
+                    <a href="~/Home/Service" class='nav-item @(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
+                    <a href="https://lawyer4518.blogspot.tw/" class="nav-item" target="new">BLOG</a>
+                    <a href="~/Home/ContactUs" class='nav-item @(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
+                </nav>
+            }
         </header>
 
         @RenderBody()
 
     </div><!-- wrapper //-->
 
-    <a href="#header" class="goTop oi" data-glyph="chevron-top" title="TOP"></a>
+    <a href="#header" class="goTop ti-angle-up" title="TOP"></a>
 
     <footer id="footer">
-        <section class="slogan">講實理．求實材而重實用</section>
-        <section class="foot-contact row row-x-0">
-            <h1 class="logo-s">長興法律事務所</h1>
-            <article class="col-md-11 offset-md-1">
-                <p class="col-md-4"></p>
-                <ul class="list-unstyled col-md-4">
-                    <li><em>T</em>886-3-4222325</li>
-                    <li><em>F</em>886-3-4250813</li>
-                    <li><em>E</em>lawyer@chini.idv.tw</li>
-                </ul>
-            </article>
-            <hr>
-            <article class="col-md-11 offset-1">
-                <nav class="foot-menu col-md-4">
-                    @Html.ActionLink("簡介", "AboutUs", "Home", null, (ViewBag.BodyClass == "AboutUs") ? new { @class = "current" } : new { @class = "" })
-                    @Html.ActionLink("專業團隊", "Lawyers", "Home", null, (ViewBag.BodyClass == "Lawyers") ? new { @class = "current" } : new { @class = "" })
-                    @Html.ActionLink("專業領域", "Service", "Home", null, (ViewBag.BodyClass == "Service") ? new { @class = "current" } : new { @class = "" })
-                    <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
-                    @Html.ActionLink("連絡我們", "ContactUs", "Home", null, (ViewBag.BodyClass == "ContactUs") ? new { @class = "current" } : new { @class = "" })
-                </nav>
-                <nav class="foot-lawer col-md-4">
-                    <a href="~/Home/Lawyers#p1" class="scroll">呂理胡</a>
-                    <a href="~/Home/Lawyers#p2" class="scroll">唐永洪</a>
-                    <a href="~/Home/Lawyers#p3" class="scroll">張晶瑩</a>
-                    <a href="~/Home/Lawyers#p4" class="scroll">楊雅馨</a>
-                    <a href="~/Home/Lawyers#p5" class="scroll">呂浩瑋</a>
-                </nav>
-            </article>
+        <section class="foot-slogan">講實理．求實材而重實用</section>
+        <section class="wrap">
+            <h1 class="foot-logo col-md-2">長興法律事務所</h1>
+            <div class="col-md-10 foot-content text-left">
+                <article class="row foot-contact">
+                    <p class="col-md-3">6F' No.1 Chung-Yang W.Rd.Sec.1 'Chung-Li City' TAIWAN R.O.C</p>
+                    <ul class="list-inline col-md-4 push-md-1">
+                        <li><em class="circle">T</em>886-3-4222325</li>
+                        <li><em class="circle">F</em>886-3-4250813</li>
+                        <li><em class="circle">E</em><a href="mailto:lawyer@chini.idv.tw">lawyer@chini.idv.tw</a></li>
+                    </ul>
+                </article>
+                <hr>
+                <article class="row">
+                    <nav class="foot-nav col-md-4">
+                        <a href="~/Home/AboutUs" class='@(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
+                        @* <a href="~/Home/Lawyers" class='@(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a> *@
+                        <a href="~/Home/Service" class='@(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
+                        <a href="https://lawyer4518.blogspot.tw/" target="new">BLOG</a>
+                        <a href="~/Home/ContactUs" class='@(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
+                    </nav>
+                    <dl class="foot-lawer col-md-5">
+                        <dt class="pull-left">LAWER</dt>
+                        <dd class="rest">
+                            <a href="~/Home/Lawyers#p1" class="scroll">呂理胡</a>
+                            <a href="~/Home/Lawyers#p2" class="scroll">唐永洪</a>
+                            <a href="~/Home/Lawyers#p3" class="scroll">張晶瑩</a>
+                            <a href="~/Home/Lawyers#p4" class="scroll">楊雅馨</a>
+                            <a href="~/Home/Lawyers#p5" class="scroll">呂浩瑋</a>
+                        </dd>
+                    </dl>
+                </article>
+            </div>
+            <div class="copyright font-tiny">&copy; 2008 - @DateTime.Now.Year CHINI LAW FIRM</div>
         </section>
-        <div class="copyright">&copy; 2008 - @DateTime.Now.Year CHINI LAW FIRM</div>
     </footer><!-- footer //-->
 
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script>
-        var $gotoTop = $('.goTop');
-        var $sticky = $('#header'),
-            stickyOffset = $sticky.offset().top;
-
-        $(window).scroll(function () {
-            var scrollTop = $(this).scrollTop();
-
-            // 沒有卷軸時不出現 goTop 按鈕
-            if (scrollTop > 100) { $gotoTop.fadeIn(); }
-            else { $gotoTop.fadeOut(); }
-
-            // 黏住效果
-            if (scrollTop > stickyOffset) { $sticky.addClass('stick'); }
-            else { $sticky.removeClass('stick'); }
-            $('#wrapper').css('padding-top', $sticky.height());
-
-            // for大螢幕
-            if (window.innerWidth >= 1024) { $sticky.css('top', scrollTop); }
-            else { $sticky.removeAttr('style'); }
-        });
-        $(window).resize(function () {
-            if (window.innerWidth >= 1024) { $sticky.css('top', $(window).scrollTop()); }
-            else { $sticky.removeAttr('style'); }
+        // 卷軸卷動效果
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('.goTop').addClass('fade-in').removeClass('fade-out');
+            } else {
+                $('.goTop').removeClass('fade-in').addClass('fade-out');
+            }
         });
 
         // 點選後跳到 href 指向的位置
-        $('.scroll').click(function () {
+        $('.scroll, .goTop').click(function () {
             var scrollToAnchor = $(this).attr('href');
             $('html, body').stop(true).animate({
                 scrollTop: $(scrollToAnchor).offset().top - 40
             }, 750);
             return false;
         });
-        $gotoTop.click(function () {
-            $('body, html').stop(true).animate({ scrollTop: 0 }, 800);
-            return false;
-        });
-
         // 行動裝置的主選單
         $trigger = $('.mobile-toggle');
         $trigger.click(function () {
             $(this).toggleClass('active');
-            $('body').toggleClass('mobile-menu');
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('ti-menu').addClass('ti-close');
+            }
+            else {
+                $(this).removeClass('ti-close').addClass('ti-menu');
+            }
+            $('body').toggleClass('js-mobile-body');
         });
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $('#menu').click(function(e){
+                $('body').removeClass('js-mobile-body');
+                $trigger.removeClass('active');
+                e.preventDefault();
+            });
+            $(".nav-item").click(function(e){
+                e.stopPropagation();
+            });
+        }
     </script>
     @RenderSection("scripts", required: false)
 </body>

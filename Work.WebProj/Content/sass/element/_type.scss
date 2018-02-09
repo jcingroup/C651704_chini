@@ -41,7 +41,7 @@ mark {
 }
 
 hr {
-    margin: $spacer*2 0;
+    margin: $hr-sapce;
     border: 0;
     border-top: $hr-border;
 }
@@ -49,7 +49,7 @@ hr {
 p {
     margin: 0;
 
-    & + & {
+    + p {
         margin-top: $p-spacer;
     }
 }

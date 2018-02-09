@@ -158,6 +158,10 @@
     <Content Include="Content\css\vendor\open-iconic.css" />
     <Content Include="Content\css\vendor\typeahead.css" />
     <Content Include="Content\font\open-iconic\open-iconic.svg" />
+    <Content Include="Content\font\themify-icons\themify.svg" />
+    <Content Include="Content\images\foot-bg.gif" />
+    <Content Include="Content\images\foot-logo.gif" />
+    <Content Include="Content\images\index\logo.gif" />
     <Content Include="Content\js\swiper\swiper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -180,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
@@ -261,6 +264,11 @@
     <Content Include="Content\sass\element\_util.scss" />
     <Content Include="Content\sass\login.scss" />
     <Content Include="Content\sass\vendor\typeahead.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\font\themify-icons\themify.eot" />
+    <Content Include="Content\font\themify-icons\themify.ttf" />
+    <Content Include="Content\font\themify-icons\themify.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
