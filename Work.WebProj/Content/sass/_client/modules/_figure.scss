@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
+%figure-full {
+    @include size(100%);
+    @include absolute(left 0 top 0);
+}
+
 figcaption {
-//     @include prefix(backface-visibility, hidden);
-//     &::before, &::after { pointer-events: none; }
+    @include prefix(backface-visibility, hidden);
+    &::before, &::after { pointer-events: none; }
 }
 
 figure {
@@ -11,11 +16,10 @@ figure {
     margin: 0;
 
     > a {
+        @extend %figure-full;
+
         z-index: z(figure);
         opacity: 0;
         background: #fff; // for IE10 bugfix
-
-        @include size(100%);
-        @include absolute(left 0 top 0);
     }
 }

@@ -4,15 +4,12 @@
 $isIndex:                        true;
 $img-index:                      '../images/index';
 
-$hr-sapce:                       12px 0 16px 0;
-$header-height:                  false;
-
 
 // import
 // ------------------------------------------------------------
-@import "core/function";   // (置頂)
+@import "core/function";     // (置頂)
 
-@import "_client/setting"; // 前台用變數
+@import "_client/setting";   // 前台用變數
 @import "core/variables";
 @import "core/mixins";
 
@@ -41,9 +38,43 @@ $header-height:                  false;
 
     display: inline-block;
 
-    @include grid(2, 7);
+    @include grid(1, 4);
 
     ~ .card {
         margin-left: 2%;
+    }
+
+    figcaption, img {
+        @include transition(.5s);
+    }
+
+    figcaption {
+        @extend %figure-full, .bg-black;
+
+        overflow: hidden;
+        opacity: 0;
+
+        &:before {
+            @extend .font-xxxl, .text-primary;
+            @include center;
+            z-index: 2;
+        }
+    }
+    img {
+        // opacity: .1;
+        @include absolute(left 50% top 50%);
+        @include prefix(filter, blur(10px) brightness(.8));
+        @include transform(translate(-50%,-50%) scale(2));
+        @include prefix(transform-origin, center);
+    }
+
+    &:hover {
+        figcaption {
+            opacity: 1;
+        }
+        img {
+            @include prefix(filter, brightness(.45));
+            @include transform(translate(-50%,-50%));
+        }
     }
 }

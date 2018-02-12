@@ -162,6 +162,8 @@
     <Content Include="Content\images\foot-bg.gif" />
     <Content Include="Content\images\foot-logo.gif" />
     <Content Include="Content\images\index\logo.gif" />
+    <Content Include="Content\images\index\ServiceBg.jpg" />
+    <Content Include="Content\images\index\ServiceBg2.jpg" />
     <Content Include="Content\js\swiper\swiper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -269,6 +271,12 @@
     <Content Include="Content\font\themify-icons\themify.eot" />
     <Content Include="Content\font\themify-icons\themify.ttf" />
     <Content Include="Content\font\themify-icons\themify.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Lawyers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Service.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

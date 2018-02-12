@@ -19,6 +19,16 @@ namespace Work.WebProj.Controllers
             return View();
         }
 
+        public ActionResult Lawyers()
+        {
+            return View();
+        }
+
+        public ActionResult Service()
+        {
+            return View();
+        }
+
         public ActionResult ContactUs()
         {
             return View();

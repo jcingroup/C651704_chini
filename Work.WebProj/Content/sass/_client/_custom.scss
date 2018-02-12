@@ -76,6 +76,8 @@
 //
 // 本次專案才用到的樣式
 .underline {
+    @extend .pb-4;
+
     border-bottom: 2px solid color();
 }
 .border {
@@ -83,13 +85,13 @@
 }
 
 .title {
-    @extend .pb-16, .text-secondary;
+    @extend .text-secondary;
 
-    line-height: 1.6;
+    // line-height: 1.6;
 
-    &.underline {
-        line-height: 1.3;
-    }
+    // &.underline {
+    //     line-height: 1.3;
+    // }
 }
 
 .help {

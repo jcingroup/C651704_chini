@@ -55,14 +55,14 @@ textarea, select {
 // ------------------------------------------------------------
 //
 // src: w3.css v4
-.font-tiny   { @include rem('font-size',12); }  // 13px
-.font-sm     { @include rem('font-size',13); }  // 14px
-.font-md     { @include rem('font-size',15); }
-.font-lg     { @include rem('font-size',20); }  // 20px
-.font-xl     { @include rem('font-size',24); }
-.font-xxl    { @include rem('font-size',32); }
-.font-xxxl   { @include rem('font-size',48); }
-.font-jumbo  { @include rem('font-size',64); }
+.font-tiny   { @include rem('font-size', 12); }  // 13px
+.font-sm     { @include rem('font-size', 13); }  // 14px
+.font-md     { @include rem('font-size', 15); }
+.font-lg     { @include rem('font-size', 20); }  // 20px
+.font-xl     { @include rem('font-size', 24); }
+.font-xxl    { @include rem('font-size', 32); }
+.font-xxxl   { @include rem('font-size', 48); }
+.font-jumbo  { @include rem('font-size', 64); }
 
 //
 // sizing

@@ -33,7 +33,9 @@
     padding-bottom: $footer-height + $wrapper-b-spacing;
 
     // 本次專案
-    // position: relative;
+    @if $isPage {
+        border-top: 2px solid color();
+    }
 }
 
 // header
@@ -48,6 +50,9 @@
     @if $isIndex {
         padding-top: 53px;
     }
+    @if $isPage {
+        padding-top: 28px;
+    }
 }
 
 .logo {
@@ -58,16 +63,21 @@
     @include transition(.3s);
 
     // 本次專案
-    @extend .mb-0;
-
     @if $isIndex {
+        @extend .mb-4;
+
         background: url(#{$img-index}/#{$logo-img}) center 0 no-repeat;
         padding-top: 104px;
         margin-bottom: 4px;
         width: 420px;
     }
+    @if $isPage {
+        background: url(#{$img-path}/#{$logo-img}) center 0 no-repeat;
+        width: 266px;
+        padding-top: 50px;
+    }
 
-    .s1 {
+    &-en {
         @extend .font-sm;
 
         $line-width: 82px;
@@ -75,22 +85,25 @@
 
         color: #9e8467;
         letter-spacing: 1px;
-        position: relative;
 
-        @include el(all) {
-            width: $line-width;
-            border-top: 1px solid color();
+        @if $isIndex {
+            position: relative;
 
-            @include absolute(top 49.5% left 50%);
-        }
-        &::before {
-            margin-left: -($line-width + $line-margin);
-        }
-        &::after {
-            margin-left: $line-margin;
+            @include el(all) {
+                width: $line-width;
+                border-top: 1px solid color();
+
+                @include absolute(top 49.5% left 50%);
+            }
+            &::before {
+                margin-left: -($line-width + $line-margin);
+            }
+            &::after {
+                margin-left: $line-margin;
+            }
         }
     }
-    .s2 {
+    &-sub {
         @extend .mt-8;
 
         color: #bdb1a2;
@@ -100,12 +113,15 @@
 }
 
 .slogan {
-    @extend .font-xxxl, .text-success;
+    @extend .text-success;
 
     font-weight: 100;
 
     @if $isIndex {
-        @extend .mb-48;
+        @extend .font-xxxl, .mb-48;
+    }
+    @if $isPage {
+        @include rem('font-size', 41);
     }
 }
 

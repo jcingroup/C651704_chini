@@ -3,30 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    @* <meta name="viewport" content="width=device-width, initial-scale=1.0"> *@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>@ViewBag.Title - 長興法律事務所</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300">
     <link rel="stylesheet" href="~/Content/css/vendor/themify-icons.css">
     <link rel="stylesheet" href="~/Content/css/grid.css">
-@if (ViewBag.IsFirstPage)
-{
-    <link rel="stylesheet" href="~/Content/css/index.css">
-}
-else
-{
-    <link rel="stylesheet" href="~/Content/css/page.css">
-}
+    @if (ViewBag.IsFirstPage)
+    {
+        <link rel="stylesheet" href="~/Content/css/index.css">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/Content/css/page.css">
+    }
     @RenderSection("Styles", false)
 </head>
 <body class="@ViewBag.BodyClass">
     <div id="wrapper">
-        <header id="header">
+        <header id="header" class="wrap">
             <h1 class="logo inline-block" onclick="location.href='@Url.Content("~/Home")'" title="回首頁" tabindex="-1">
                 <span class="text-hide">長興法律事務所</span>
-                <small class="s1 block">CHINI LAW FIRM</small>
-                <small class="s2 block">〔原呂理胡律師事務所〕</small>
+                <small class="logo-en block">CHINI LAW FIRM</small>
+                <small class="logo-sub block">〔原呂理胡律師事務所〕</small>
             </h1>
             <h2 class="slogan">PROFESSIONAL . INNOVATIVE . EFFICIENT</h2>
 

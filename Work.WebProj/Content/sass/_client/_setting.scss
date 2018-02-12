@@ -21,7 +21,7 @@ $colors: (
 );
 
 
-// == custom
+// == custom-element
 // ----------------------------------------------------------------------
 // basic
 $body-bg:                    #fcfaf7;
@@ -30,52 +30,11 @@ $font-family-sp:             false; // 'Montserrat', sans-serif
 $font-family-base:           'Montserrat', \5FAE\8EDF\6B63\9ED1\9AD4,"微軟正黑體","Microsoft JhengHei",'Helvetica Neue',Helvetica,Arial,sans-serif !default;
 
 // link
-$link-color:                 $body-color;
-$link-color-hover:           darken(color(success), 4);
+$link-color:                 color(secondary);
+$link-color-hover:           color();
 
 $border-color:               #625432;
-$border-radius:              4px;
-
-// $hr-border:                  1px solid rgba($border-color, .4);
-
-// table
-$table-color-border:         rgba(#000, .08);
-$table-pd:                   7px 8px;
-$table-bg-hover:             #fff;
-$table-bg-striped:           #fff;
-
-// form
-$input-color:                darken(color(), 45);
-$input-color-border:         #e9cf98;
-$input-color-placeholder:    darken(color(muted), 13);
-$input-height:               30px;
-$input-shadow:               false;
-
-$input-focus-border-color:   color(success);
-
-$input-group-addon-color:    darken($input-color-border, 20);
-$input-group-addon-bg:       lighten($input-color-border, 10);
-
-
-// btn
-$btn-font-size:              18px !default;
-// $btn-bg:                     color(success) !default;
-$btn-bg-hover:               color(secondary) !default;
-$btn-bg-disabled:            darken(color(muted), 10) !default;
-$btn-theme: (
-    success:                 color(success),
-    info:                    color(info),
-    warning:                 color(warning),
-    danger:                  color(danger),
-    muted:                   darken(color(muted), 20)
-) !default;
-
-// label
-$label-pd:                   5px 8px;
-$label-radius:               4px;
-
-// modal
-$modal-top:                  false;
+$hr-sapce:                   12px 0 16px;
 
 
 // == layout
@@ -88,7 +47,7 @@ $wrapper-bg:            false !default;
 $wrapper-b-spacing:     50px !default;
 
 // header
-$header-height:         122px !default; // for page
+$header-height:         false !default; // for page
 $header-bg:             url(#{$img-path}/header-bg.png) 330px 8px no-repeat !default;
 $header-mobile-height:  90px !default;
 
@@ -120,8 +79,8 @@ $z-index: (
     logo:               10,
     menu:               20,
     figure:             1,
-    tooltip:            88,
+    // tooltip:            88,
     goTop:              99,
     overlay:            999,
-    acckey:             19
+    // acckey:             19
 );
