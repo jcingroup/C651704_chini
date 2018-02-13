@@ -34,7 +34,7 @@
 
     // 本次專案
     @if $isPage {
-        border-top: 2px solid color();
+        border-top: 1px solid color();
     }
 }
 
@@ -51,6 +51,7 @@
         padding-top: 53px;
     }
     @if $isPage {
+        @extend .mb-64;
         padding-top: 28px;
     }
 }
@@ -74,7 +75,7 @@
     @if $isPage {
         background: url(#{$img-path}/#{$logo-img}) center 0 no-repeat;
         width: 266px;
-        padding-top: 50px;
+        padding-top: 48px;
     }
 
     &-en {

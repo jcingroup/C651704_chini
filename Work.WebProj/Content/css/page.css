@@ -213,7 +213,7 @@ button, [role="button"], [type="button"] {
   border: none; }
   button:focus, [role="button"]:focus, [type="button"]:focus {
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 2px rgba(255, 226, 63, 0.35); }
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 2px rgba(230, 182, 55, 0.35); }
 
 a {
   color: #513d29;
@@ -237,8 +237,8 @@ h1 {
   font-size: 3rem; }
 
 h2 {
-  font-size: 32px;
-  font-size: 2rem; }
+  font-size: 45px;
+  font-size: 2.8125rem; }
 
 h3 {
   font-size: 27px;
@@ -332,9 +332,9 @@ dd {
     .btn.info:hover, .btn.info:active, .btn.info.active {
       background: #5294b9; }
   .btn.warning {
-    background: #ffe23f; }
+    background: #e6b637; }
     .btn.warning:hover, .btn.warning:active, .btn.warning.active {
-      background: #ffe868; }
+      background: #ebc35b; }
   .btn.danger {
     background: #FF2200; }
     .btn.danger:hover, .btn.danger:active, .btn.danger.active {
@@ -628,7 +628,7 @@ dd {
 .mr-64 {
   margin-right: 4rem; }
 
-.mb-64 {
+.mb-64, #header {
   margin-bottom: 4rem; }
 
 .ml-64 {
@@ -845,7 +845,7 @@ dd {
   padding-right: 3rem;
   padding-left: 3rem; }
 
-.py-48 {
+.py-48, .lawyer-head {
   padding-top: 3rem;
   padding-bottom: 3rem; }
 
@@ -904,7 +904,7 @@ dd {
 .text-black {
   color: #000; }
 
-.bg-white, .btn.white {
+.bg-white, .btn.white, .card {
   background-color: #fff; }
 
 .bg-black {
@@ -966,15 +966,15 @@ dd {
     color: #2b546b; }
 
 .text-warning {
-  color: #ffe23f; }
+  color: #e6b637; }
 
 .bg-warning {
-  background-color: #ffe23f; }
+  background-color: #e6b637; }
 
 .hover-warning {
-  color: #ffe23f; }
+  color: #e6b637; }
   .hover-warning:hover, .hover-warning:active {
-    color: #f2cd00; }
+    color: #b98d17; }
 
 .text-danger, .help {
   color: #FF2200; }
@@ -1009,8 +1009,8 @@ dd {
 
 #wrapper {
   min-height: 100%;
-  padding-bottom: 560px;
-  border-top: 2px solid #f1bc2f; }
+  padding-bottom: 610px;
+  border-top: 1px solid #f1bc2f; }
 
 #header {
   background: url(../images/header-bg.png) 330px 8px no-repeat;
@@ -1026,18 +1026,18 @@ dd {
   transition: 0.3s;
   background: url(../images/logo.gif) center 0 no-repeat;
   width: 266px;
-  padding-top: 50px; }
+  padding-top: 48px; }
   .logo-en {
     color: #9e8467;
     letter-spacing: 1px; }
   .logo-sub {
     color: #bdb1a2;
-    font-size: 16;
+    font-size: 16px;
     font-size: 1rem; }
 
 .slogan {
   font-weight: 100;
-  font-size: 41;
+  font-size: 41px;
   font-size: 2.5625rem; }
 
 #footer {
@@ -1063,7 +1063,7 @@ dd {
   letter-spacing: 4px;
   border-bottom: 2px solid #fff;
   background: #f1bc2f url(../images/foot-bg.gif) 120% center no-repeat;
-  font-size: 39;
+  font-size: 39px;
   font-size: 2.4375rem; }
 .foot-logo {
   background: url(../images/foot-logo.gif) 40px 0 no-repeat;
@@ -1089,6 +1089,18 @@ dd {
 
 #menu {
   z-index: 20; }
+  @media (min-width: 75em) {
+    #menu::before, #menu::after {
+      content: '';
+      display: block;
+      width: calc(50% - 75px);
+      border-top: 1px solid #f1bc2f;
+      position: absolute;
+      top: 134px; }
+    #menu::before {
+      left: 0; }
+    #menu::after {
+      right: 0; } }
   @media (max-width: 74.9375em) {
     #menu {
       height: 48px; } }
@@ -1117,14 +1129,43 @@ dd {
         visibility: visible; } }
 
 .nav-item {
-  letter-spacing: .5px;
-  background-repeat: no-repeat;
-  background-position: center 0;
-  position: relative; }
+  letter-spacing: .5px; }
   @media (min-width: 75em) {
     .nav-item {
       font-size: 17px;
-      font-size: 1.0625rem; } }
+      font-size: 1.0625rem;
+      position: absolute;
+      top: 92px; }
+      .nav-item:nth-child(1) {
+        left: 7.58%; }
+      .nav-item:nth-child(2) {
+        left: 16.5%; }
+      .nav-item:nth-child(3) {
+        left: 26.83%; }
+      .nav-item:nth-child(4) {
+        left: 68%; }
+      .nav-item:nth-child(5) {
+        left: 77.42%; }
+      .nav-item::after {
+        border-radius: 50%;
+        width: 13px;
+        height: 13px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        border: 1px solid #f1bc2f;
+        position: relative;
+        left: 50%;
+        top: 28px;
+        margin-left: -6.5px; }
+        .nav-item::after {
+          content: '';
+          display: block; }
+      .nav-item:hover::after, .nav-item:active::after {
+        box-shadow: 0 0 0 8px rgba(241, 188, 47, 0.3); }
+      .nav-item.current {
+        color: #513d29; }
+        .nav-item.current::after {
+          background: #f1bc2f; } }
 
 .js-mobile-body {
   overflow-y: hidden; }
@@ -1148,35 +1189,35 @@ dd {
     box-shadow: none; }
 
 .font-tiny {
-  font-size: 13;
+  font-size: 13px;
   font-size: 0.8125rem; }
 
 .font-sm, .logo-en, .foot-contact, .btn.sm {
-  font-size: 14;
+  font-size: 14px;
   font-size: 0.875rem; }
 
 .font-md {
-  font-size: 15;
+  font-size: 15px;
   font-size: 0.9375rem; }
 
 .font-lg, .btn.lg, .goTop {
-  font-size: 18;
+  font-size: 18px;
   font-size: 1.125rem; }
 
 .font-xl {
-  font-size: 24;
+  font-size: 24px;
   font-size: 1.5rem; }
 
 .font-xxl, .foot-lawer dt, .mobile-toggle {
-  font-size: 32;
+  font-size: 32px;
   font-size: 2rem; }
 
 .font-xxxl {
-  font-size: 48;
+  font-size: 48px;
   font-size: 3rem; }
 
 .font-jumbo {
-  font-size: 64;
+  font-size: 64px;
   font-size: 4rem; }
 
 .goTop {
@@ -1237,8 +1278,36 @@ dd {
 .underline {
   border-bottom: 2px solid #f1bc2f; }
 
-.border {
+.border, .card {
   border: 1px solid #f1bc2f; }
 
 .help {
   cursor: help; }
+
+.card ~ .card {
+  margin-left: 3%; }
+
+.lawyer-head {
+  color: #3d332b;
+  background-image: url(../images/lawyer-headBg.gif);
+  background-position: center;
+  background-repeat: no-repeat; }
+  .lawyer-head h1 {
+    letter-spacing: 3px; }
+
+.service-law, .service-scribe {
+  min-height: 600px;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  width: 42.85%; }
+  .service-law p, .service-scribe p {
+    font-size: 17px;
+    font-size: 1.0625rem; }
+    .service-law p ~ p, .service-scribe p ~ p {
+      margin-top: 0.75em; }
+.service-law {
+  background-image: url(../images/service-law.jpg);
+  background-position: 0 bottom; }
+.service-scribe {
+  background-image: url(../images/service-scribe.jpg);
+  background-position: right 0; }

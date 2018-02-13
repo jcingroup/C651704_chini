@@ -4,6 +4,8 @@
 // ------------------------------------------------------------
 $isPage:                 true;
 
+$font-size-h2:           45px;
+
 
 // import
 // ------------------------------------------------------------
@@ -32,3 +34,44 @@ $isPage:                 true;
 
 // main
 // ------------------------------------------------------------
+
+// == 專業團隊
+.lawyer {
+    &-head {
+        @extend .py-48;
+
+        color: #3d332b;
+        background-image: url(#{$img-path}/lawyer-headBg.gif);
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 { letter-spacing: 3px; }
+    }
+}
+
+// == 專業領域
+.service {
+    &-law, &-scribe {
+        min-height: 600px;
+        vertical-align: top;
+        background-repeat: no-repeat;
+
+        @include grid(3, 7);
+
+        p {
+            @include rem('font-size', 17);
+
+            ~ p {
+                margin-top: em(12);
+            }
+        }
+    }
+    &-law {
+        background-image: url(#{$img-path}/service-law.jpg);
+        background-position: 0 bottom;
+    }
+    &-scribe {
+        background-image: url(#{$img-path}/service-scribe.jpg);
+        background-position: right 0;
+    }
+}

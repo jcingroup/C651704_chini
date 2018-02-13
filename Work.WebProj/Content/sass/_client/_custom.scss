@@ -86,15 +86,30 @@
 
 .title {
     @extend .text-secondary;
-
-    // line-height: 1.6;
-
-    // &.underline {
-    //     line-height: 1.3;
-    // }
 }
 
 .help {
     @extend .text-danger;
     cursor: help;
+}
+
+.card {
+    @extend .bg-white, .border;
+
+    @if $isIndex {
+        @extend .p-24;
+
+        display: inline-block;
+
+        @include grid(1, 4);
+
+        ~ .card {
+            margin-left: 2%;
+        }
+    }
+    @if $isPage {
+        ~ .card {
+            margin-left: 3%;
+        }
+    }
 }

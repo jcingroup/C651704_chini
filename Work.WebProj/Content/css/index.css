@@ -213,7 +213,7 @@ button, [role="button"], [type="button"] {
   border: none; }
   button:focus, [role="button"]:focus, [type="button"]:focus {
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 2px rgba(255, 226, 63, 0.35); }
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 2px rgba(230, 182, 55, 0.35); }
 
 a {
   color: #513d29;
@@ -925,15 +925,15 @@ dd {
     color: #2b546b; }
 
 .text-warning {
-  color: #ffe23f; }
+  color: #e6b637; }
 
 .bg-warning {
-  background-color: #ffe23f; }
+  background-color: #e6b637; }
 
 .hover-warning {
-  color: #ffe23f; }
+  color: #e6b637; }
   .hover-warning:hover, .hover-warning:active {
-    color: #f2cd00; }
+    color: #b98d17; }
 
 .text-danger, .help {
   color: #FF2200; }
@@ -968,7 +968,7 @@ dd {
 
 #wrapper {
   min-height: 100%;
-  padding-bottom: 560px; }
+  padding-bottom: 610px; }
 
 #header {
   background: url(../images/header-bg.png) 330px 8px no-repeat;
@@ -1005,7 +1005,7 @@ dd {
       margin-left: 72px; }
   .logo-sub {
     color: #bdb1a2;
-    font-size: 16;
+    font-size: 16px;
     font-size: 1rem; }
 
 .slogan {
@@ -1034,7 +1034,7 @@ dd {
   letter-spacing: 4px;
   border-bottom: 2px solid #fff;
   background: #f1bc2f url(../images/foot-bg.gif) 120% center no-repeat;
-  font-size: 39;
+  font-size: 39px;
   font-size: 2.4375rem; }
 .foot-logo {
   background: url(../images/foot-logo.gif) 40px 0 no-repeat;
@@ -1081,35 +1081,35 @@ figure {
     background: #fff; }
 
 .font-tiny {
-  font-size: 13;
+  font-size: 13px;
   font-size: 0.8125rem; }
 
 .font-sm, .logo-en, .foot-contact, .btn.sm {
-  font-size: 14;
+  font-size: 14px;
   font-size: 0.875rem; }
 
 .font-md {
-  font-size: 15;
+  font-size: 15px;
   font-size: 0.9375rem; }
 
 .font-lg, .btn.lg, .goTop {
-  font-size: 18;
+  font-size: 18px;
   font-size: 1.125rem; }
 
 .font-xl {
-  font-size: 24;
+  font-size: 24px;
   font-size: 1.5rem; }
 
 .font-xxl, .foot-lawer dt {
-  font-size: 32;
+  font-size: 32px;
   font-size: 2rem; }
 
 .font-xxxl, .slogan, .card figcaption:before {
-  font-size: 48;
+  font-size: 48px;
   font-size: 3rem; }
 
 .font-jumbo {
-  font-size: 64;
+  font-size: 64px;
   font-size: 4rem; }
 
 .goTop {
@@ -1176,44 +1176,45 @@ figure {
 .help {
   cursor: help; }
 
-.main {
-  margin-bottom: 118px; }
-
 .card {
   display: inline-block;
   width: 25%; }
   .card ~ .card {
     margin-left: 2%; }
-  .card figcaption, .card img {
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
-  .card figcaption {
-    overflow: hidden;
-    opacity: 0; }
-    .card figcaption:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      z-index: 2; }
-  .card img {
+
+.main {
+  margin-bottom: 68px; }
+
+.card figcaption, .card img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+.card figcaption {
+  overflow: hidden;
+  opacity: 0; }
+  .card figcaption:before {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-filter: blur(10px) brightness(0.8);
-    filter: blur(10px) brightness(0.8);
-    -ms-transform: translate(-50%, -50%) scale(2);
-    -webkit-transform: translate(-50%, -50%) scale(2);
-    transform: translate(-50%, -50%) scale(2);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-  .card:hover figcaption {
-    opacity: 1; }
-  .card:hover img {
-    -webkit-filter: brightness(0.45);
-    filter: brightness(0.45);
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    z-index: 2; }
+.card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-filter: blur(10px) brightness(0.8);
+  filter: blur(10px) brightness(0.8);
+  -ms-transform: translate(-50%, -50%) scale(2);
+  -webkit-transform: translate(-50%, -50%) scale(2);
+  transform: translate(-50%, -50%) scale(2);
+  -webkit-transform-origin: center;
+  transform-origin: center; }
+.card:hover figcaption {
+  opacity: 1; }
+.card:hover img {
+  -webkit-filter: brightness(0.45);
+  filter: brightness(0.45);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }

@@ -16,7 +16,7 @@ $colors: (
     muted:                #b3b3b3,
     success:              #9e8467,
     info:                 #417fa1, // 30bebc
-    warning:              #ffe23f,
+    warning:              #e6b637,
     danger:               #FF2200
 );
 
@@ -44,7 +44,7 @@ $max-width:             1400px;     // 網頁最寬尺寸: .wrap
 
 // $wrapper-bg:            url(#{$img-path}/bg.gif) center bottom no-repeat !default;
 $wrapper-bg:            false !default;
-$wrapper-b-spacing:     50px !default;
+$wrapper-b-spacing:     100px !default;
 
 // header
 $header-height:         false !default; // for page

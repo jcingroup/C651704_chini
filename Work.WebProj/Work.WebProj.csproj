@@ -164,6 +164,10 @@
     <Content Include="Content\images\index\logo.gif" />
     <Content Include="Content\images\index\ServiceBg.jpg" />
     <Content Include="Content\images\index\ServiceBg2.jpg" />
+    <Content Include="Content\images\lawyer-headBg.gif" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\images\service-law.jpg" />
+    <Content Include="Content\images\service-scribe.jpg" />
     <Content Include="Content\js\swiper\swiper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

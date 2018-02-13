@@ -168,7 +168,7 @@ button, [role="button"], [type="button"] {
   border: none; }
   button:focus, [role="button"]:focus, [type="button"]:focus {
     outline: 0;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 2px rgba(255, 226, 63, 0.35); }
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 2px rgba(230, 182, 55, 0.35); }
 
 a {
   color: #513d29;
@@ -855,7 +855,7 @@ th, td {
 .text-black {
   color: #000; }
 
-.bg-white {
+.bg-white, .card {
   background-color: #fff; }
 
 .bg-black {
@@ -917,15 +917,15 @@ th, td {
     color: #2b546b; }
 
 .text-warning {
-  color: #ffe23f; }
+  color: #e6b637; }
 
 .bg-warning {
-  background-color: #ffe23f; }
+  background-color: #e6b637; }
 
 .hover-warning {
-  color: #ffe23f; }
+  color: #e6b637; }
   .hover-warning:hover, .hover-warning:active {
-    color: #f2cd00; }
+    color: #b98d17; }
 
 .text-danger, .help {
   color: #FF2200; }
@@ -945,35 +945,35 @@ th, td {
   color: #b3b3b3; }
 
 .font-tiny {
-  font-size: 13;
+  font-size: 13px;
   font-size: 0.8125rem; }
 
 .font-sm, .btn.sm {
-  font-size: 14;
+  font-size: 14px;
   font-size: 0.875rem; }
 
 .font-md {
-  font-size: 15;
+  font-size: 15px;
   font-size: 0.9375rem; }
 
 .font-lg, .btn.lg, .goTop {
-  font-size: 18;
+  font-size: 18px;
   font-size: 1.125rem; }
 
 .font-xl {
-  font-size: 24;
+  font-size: 24px;
   font-size: 1.5rem; }
 
 .font-xxl {
-  font-size: 32;
+  font-size: 32px;
   font-size: 2rem; }
 
 .font-xxxl {
-  font-size: 48;
+  font-size: 48px;
   font-size: 3rem; }
 
 .font-jumbo {
-  font-size: 64;
+  font-size: 64px;
   font-size: 4rem; }
 
 .goTop {
@@ -1034,7 +1034,7 @@ th, td {
 .underline {
   border-bottom: 2px solid #f1bc2f; }
 
-.border {
+.border, .card {
   border: 1px solid #f1bc2f; }
 
 .help {
