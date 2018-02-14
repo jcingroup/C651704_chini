@@ -36,18 +36,85 @@ $font-size-h2:           45px;
 // ------------------------------------------------------------
 
 // == 專業團隊
-.lawyer {
+.Lawyers #wrapper {
+    padding-bottom: $footer-height;
+}
+
+// 律師選單
+.lawyers {
     &-head {
         @extend .py-48;
 
-        color: #3d332b;
-        background-image: url(#{$img-path}/lawyer-headBg.gif);
-        background-position: center;
-        background-repeat: no-repeat;
+        background: color(warning) url(#{$img-path}/lawyer-headBg.gif) center no-repeat;
+        border-bottom: 2px solid #fff;
 
         h1 { letter-spacing: 3px; }
     }
+    &-nav {
+        a {
+            color: #876647;
+            padding: 0 28px;
+            margin-right: -4px;
+
+            @include rem('font-size', 21);
+
+            &:not(:last-child) {
+                border-right: 1px solid #fff;
+            }
+
+            &:hover, &:active, &.current {
+                @extend .text-info;
+            }
+        }
+    }
 }
+
+// 律師資料
+.lawyer {
+    background: #f5efe9 url(#{$img-path}/lawyer-footBg.gif) center bottom no-repeat;
+    border-bottom: 3px solid #fff;
+    padding-bottom: 84px;
+
+    .intro {
+        @extend .mb-48, .pl-32;
+    }
+
+    // 姓名+頭銜
+    &-title {
+        @extend .font-xxl, .mt-0, .mb-24;
+
+        margin-top: 76px;
+
+        span  {
+            letter-spacing: 10px;
+        }
+        small {
+            letter-spacing: 3px;
+            margin-top: 20px;
+
+            @include rem('font-size', 20);
+        }
+    }
+
+    article {
+        @extend .pt-48;
+
+        background: url(#{$img-path}/lawyer-infoBg.gif) center 90px no-repeat;
+        border-top: 1px solid #e8ddd3;
+    }
+
+    &-info {
+        dt {
+            @extend .mb-24;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+        p {
+            @extend .mt-12
+        }
+    }
+}
+
 
 // == 專業領域
 .service {

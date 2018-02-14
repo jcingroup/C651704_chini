@@ -612,7 +612,7 @@ th, td {
   padding-right: 0;
   padding-left: 0; }
 
-.py-0, .btn.sm {
+.py-0 {
   padding-top: 0;
   padding-bottom: 0; }
 
@@ -681,7 +681,7 @@ th, td {
   padding-right: 0.5rem;
   padding-left: 0.5rem; }
 
-.py-8, .btn.lg, .goTop {
+.py-8, .goTop {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; }
 
@@ -700,7 +700,7 @@ th, td {
 .pl-12 {
   padding-left: 0.75rem; }
 
-.px-12, .btn.sm {
+.px-12 {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -769,7 +769,7 @@ th, td {
 .pl-32 {
   padding-left: 2rem; }
 
-.px-32, .btn.lg {
+.px-32 {
   padding-right: 2rem;
   padding-left: 2rem; }
 
@@ -884,15 +884,15 @@ th, td {
     color: #1e170f; }
 
 .text-muted {
-  color: #b3b3b3; }
+  color: #695f5f; }
 
 .bg-muted {
-  background-color: #b3b3b3; }
+  background-color: #695f5f; }
 
 .hover-muted {
-  color: #b3b3b3; }
+  color: #695f5f; }
   .hover-muted:hover, .hover-muted:active {
-    color: #8d8d8d; }
+    color: #413b3b; }
 
 .text-success {
   color: #9e8467; }
@@ -906,15 +906,15 @@ th, td {
     color: #715d48; }
 
 .text-info {
-  color: #417fa1; }
+  color: #3d332b; }
 
 .bg-info {
-  background-color: #417fa1; }
+  background-color: #3d332b; }
 
 .hover-info {
-  color: #417fa1; }
+  color: #3d332b; }
   .hover-info:hover, .hover-info:active {
-    color: #2b546b; }
+    color: #100d0b; }
 
 .text-warning {
   color: #e6b637; }
@@ -942,13 +942,13 @@ th, td {
 [class*="hover-"].disabled,
 [class*="hover-"][disabled] {
   cursor: not-allowed;
-  color: #b3b3b3; }
+  color: #695f5f; }
 
 .font-tiny {
   font-size: 13px;
   font-size: 0.8125rem; }
 
-.font-sm, .btn.sm {
+.font-sm {
   font-size: 14px;
   font-size: 0.875rem; }
 
@@ -956,7 +956,7 @@ th, td {
   font-size: 15px;
   font-size: 0.9375rem; }
 
-.font-lg, .btn.lg, .goTop {
+.font-lg, .goTop {
   font-size: 18px;
   font-size: 1.125rem; }
 
@@ -965,8 +965,8 @@ th, td {
   font-size: 1.5rem; }
 
 .font-xxl {
-  font-size: 32px;
-  font-size: 2rem; }
+  font-size: 35px;
+  font-size: 2.1875rem; }
 
 .font-xxxl {
   font-size: 48px;

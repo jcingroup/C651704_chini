@@ -3,15 +3,15 @@
 
 // == btn-custom
 // ------------------------------------------------------------
-.btn {
-    // 各尺寸按鈕
-    &.sm {
-        @extend .font-sm, .py-0, .px-12;
-    }
-    &.lg {
-        @extend .font-lg, .py-8, .px-32;
-    }
-}
+// .btn {
+//     // 各尺寸按鈕
+//     &.sm {
+//         @extend .font-sm, .py-0, .px-12;
+//     }
+//     &.lg {
+//         @extend .font-lg, .py-8, .px-32;
+//     }
+// }
 
 
 // == custom
@@ -22,7 +22,7 @@
 .font-md     { @include rem('font-size', 15); }  // 15px
 .font-lg     { @include rem('font-size', 18); }  // 18px
 .font-xl     { @include rem('font-size', 24); }  // 24px
-.font-xxl    { @include rem('font-size', 32); }  // 36px
+.font-xxl    { @include rem('font-size', 35); }  // 36px
 .font-xxxl   { @include rem('font-size', 48); }  // 48px
 .font-jumbo  { @include rem('font-size', 64); }  // 64px
 
