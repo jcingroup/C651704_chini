@@ -1443,18 +1443,25 @@ th, td {
     padding-left: 32px; } }
 
 .Lawyers #wrapper {
-  padding-bottom: 420px; }
+  padding-bottom: 510px; }
+  @media (max-width: 63.9375em) {
+    .Lawyers #wrapper {
+      padding-bottom: 420px; } }
 
 .lawyers-head {
   background: #e6b637 url(../images/lawyers/lawyer-headBg.gif) center no-repeat;
   border-bottom: 2px solid #fff;
   -webkit-transition: 0.35s;
   transition: 0.35s; }
-  @media (max-width: 63.9375em) {
-    .lawyers-head {
-      background-size: cover; } }
   .lawyers-head h1 {
     letter-spacing: 3px; }
+  @media (max-width: 63.9375em) {
+    .lawyers-head {
+      background-size: cover;
+      padding-top: 24px;
+      padding-bottom: 24px; }
+      .lawyers-head h1 {
+        margin-bottom: 16px; } }
   .lawyers-head.fixed {
     width: 100%;
     z-index: 4;

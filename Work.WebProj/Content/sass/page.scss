@@ -45,7 +45,11 @@ $font-size-h2:           45px;
 
 // == 專業團隊
 .Lawyers #wrapper {
-    padding-bottom: $footer-height;
+    padding-bottom: $footer-desktop-height;
+
+    @include mq-max(break(desktop, -1)) {
+        padding-bottom: $footer-height;
+    }
 }
 
 // 律師選單
@@ -58,17 +62,21 @@ $font-size-h2:           45px;
 
         @include transition(.35s);
 
+        h1 { letter-spacing: 3px; }
+
         @include mq-max(break(desktop, -1)) {
             background-size: cover;
-        }
+            padding-top: 24px;
+            padding-bottom: 24px;
 
-        h1 { letter-spacing: 3px; }
+            h1 { margin-bottom: 16px; }
+        }
 
         &.fixed {
             @extend .py-8;
 
             width: 100%;
-            z-index: 4;
+            z-index: z(header) + 1;
 
             @include fixed(top 0);
 
