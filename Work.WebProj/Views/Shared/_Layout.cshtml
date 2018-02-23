@@ -9,6 +9,7 @@
     <title>@ViewBag.Title - 長興法律事務所</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300">
     <link rel="stylesheet" href="~/Content/css/vendor/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/css/vendor/swiper.min.css">
     <link rel="stylesheet" href="~/Content/css/grid.css">
     @if (ViewBag.IsFirstPage)
     {
@@ -18,7 +19,7 @@
     {
         <link rel="stylesheet" href="~/Content/css/page.css">
     }
-    @RenderSection("Styles", false)
+    @RenderSection("head", false)
 </head>
 <body class="@ViewBag.BodyClass">
     <div id="wrapper">
@@ -28,9 +29,9 @@
                 <small class="logo-en block">CHINI LAW FIRM</small>
                 <small class="logo-sub block">〔原呂理胡律師事務所〕</small>
             </h1>
-            <h2 class="slogan">PROFESSIONAL . INNOVATIVE . EFFICIENT</h2>
 
             @if (!ViewBag.IsFirstPage) {
+                <button class="mobile-toggle ti-menu" title="選單"></button>
                 <nav id="menu">
                     <a href="~/Home/AboutUs" class='nav-item @(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
                     <a href="~/Home/Lawyers" class='nav-item @(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a>
@@ -39,6 +40,14 @@
                     <a href="~/Home/ContactUs" class='nav-item @(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
                 </nav>
             }
+
+            <section id="banner" class="swiper-container">
+                <main class="swiper-wrapper">
+                    <div class="swiper-slide">PROFESSIONAL . INNOVATIVE . EFFICIENT</div>
+                    <div class="swiper-slide">提供專業法律諮詢，協助處理您的法律困擾</div>
+                    <div class="swiper-slide">UNPARALLELED EXPERTISE . INDUSTRY KNOWLEDGE</div>
+                </main>
+            </section>
         </header>
 
         @RenderBody()
@@ -51,10 +60,10 @@
         <section class="foot-slogan">講實理．求實材而重實用</section>
         <section class="wrap">
             <h1 class="foot-logo col-md-2">長興法律事務所</h1>
-            <div class="col-md-10 foot-content text-left">
+            <div class="foot-content col-md-10 text-left">
                 <article class="row foot-contact">
-                    <p class="col-md-3">6F' No.1 Chung-Yang W.Rd.Sec.1 'Chung-Li City' TAIWAN R.O.C</p>
-                    <ul class="list-inline col-md-4 push-md-1">
+                    <p class="col-sm-5 col-md-3">6F' No.1 Chung-Yang W.Rd.Sec.1 'Chung-Li City' TAIWAN R.O.C</p>
+                    <ul class="list-inline col-sm-7 col-md-4 push-md-1">
                         <li><em class="circle">T</em>886-3-4222325</li>
                         <li><em class="circle">F</em>886-3-4250813</li>
                         <li><em class="circle">E</em><a href="mailto:lawyer@chini.idv.tw">lawyer@chini.idv.tw</a></li>
@@ -62,14 +71,14 @@
                 </article>
                 <hr>
                 <article class="row">
-                    <nav class="foot-nav col-md-4">
+                    <nav class="foot-nav col-sm-5 col-md-4">
                         <a href="~/Home/AboutUs" class='@(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
                         @* <a href="~/Home/Lawyers" class='@(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a> *@
                         <a href="~/Home/Service" class='@(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
                         <a href="https://lawyer4518.blogspot.tw/" target="new" title="外連網頁,另開新視窗">BLOG</a>
                         <a href="~/Home/ContactUs" class='@(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
                     </nav>
-                    <dl class="foot-lawer col-md-5">
+                    <dl class="foot-lawer col-sm-7 col-lg-5">
                         <dt class="pull-left">LAWER</dt>
                         <dd class="rest">
                             <a href="~/Home/Lawyers#p1" class="scroll">呂理胡</a>
@@ -86,6 +95,7 @@
     </footer><!-- footer //-->
 
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="~/Content/js/swiper.min.js"></script>
     <script>
         // 卷軸卷動效果
         $(window).scroll(function() {
@@ -96,14 +106,22 @@
             }
         });
 
-        // 點選後跳到 href 指向的位置
-        $('.scroll, .goTop').click(function () {
-            var scrollToAnchor = $(this).attr('href');
-            $('html, body').stop(true).animate({
-                scrollTop: $(scrollToAnchor).offset().top - 40
-            }, 750);
+        // 點選後跳到 href 指向的位置 - 可連其他頁的錨點版本
+        $('.scroll').click(function () {
+            var offset = 54;
+            var target = this.hash;
+            if ($(this).data('offset') != undefined) offset = $(this).data('offset');
+            $('html, body').stop().animate({
+                'scrollTop': $(target).offset().top - offset
+            }, 800, 'swing', function() {
+                window.location.hash = target;
+            });
+        });
+        $('.goTop').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 800);
             return false;
         });
+
         // 行動裝置的主選單
         $trigger = $('.mobile-toggle');
         $trigger.click(function () {
@@ -126,6 +144,18 @@
                 e.stopPropagation();
             });
         }
+
+        // swiper 4.1.6 (輪播效果)
+        var mySwiper = new Swiper('.swiper-container', {
+            speed: 1000,
+            effect: 'flip',
+            autoplay: {
+                delay: 5000,
+            },
+            flipEffect: {
+                slideShadows: false
+            },
+        });
     </script>
     @RenderSection("scripts", required: false)
 </body>

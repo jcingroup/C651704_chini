@@ -29,10 +29,13 @@
     @if not $enable-RWD { min-width: $min-width; }
 
     @if $lte7           { _height: 100%; }
-    min-height: 100%; //calc(100vh - #{$footer-height})
+    min-height: 100%;
     padding-bottom: $footer-height + $wrapper-b-spacing;
 
     // 本次專案
+    @include mq(desktop) {
+        padding-bottom: $footer-desktop-height + $wrapper-b-spacing;
+    }
     @if $isPage {
         border-top: 1px solid color();
     }
@@ -58,7 +61,7 @@
 
 .logo {
     cursor: pointer; cursor: hand; // for ie
-    z-index: z(logo);
+    // z-index: z(logo);
 
     // @include text-pic($logo-img, nth($logo-size,1), nth($logo-size,2));
     @include transition(.3s);
@@ -71,11 +74,27 @@
         padding-top: 104px;
         margin-bottom: 4px;
         width: 420px;
+
+        @include mq-max(480px) {
+            width: 100%;
+            padding-top: 22.5%;
+            background-size: contain;
+        }
+        @include mq-max(mobile) {
+            padding-top: 17.6%;
+        }
     }
     @if $isPage {
         background: url(#{$img-path}/#{$logo-img}) center 0 no-repeat;
         width: 266px;
         padding-top: 48px;
+    }
+
+    @include mq(phone-plus, break($mobile-menu-bk, -1)) {
+        .js-mobile-body & {
+            position: relative;
+            z-index: z(overlay) + 1;
+        }
     }
 
     &-en {
@@ -86,23 +105,35 @@
 
         color: #9e8467;
         letter-spacing: 1px;
+        position: relative;
 
-        @if $isIndex {
-            position: relative;
+        @include el(all, $ext:false) {
+            width: $line-width;
+            border-top: 1px solid color();
 
-            @include el(all) {
-                width: $line-width;
-                border-top: 1px solid color();
+            @include absolute(top 49.5% left 50%);
 
-                @include absolute(top 49.5% left 50%);
+            @include mq-max(mobile) {
+                width: 42px;
             }
-            &::before {
-                margin-left: -($line-width + $line-margin);
-            }
-            &::after {
-                margin-left: $line-margin;
+
+            @if $isPage {
+                @include mq($mobile-menu-bk) {
+                    display: none;
+                }
             }
         }
+        &::before {
+            margin-left: -($line-width + $line-margin);
+
+            @include mq-max(mobile) {
+                margin-left: -(42px + $line-margin);
+            }
+        }
+        &::after {
+            margin-left: $line-margin;
+        }
+
     }
     &-sub {
         @extend .mt-8;
@@ -113,16 +144,23 @@
     }
 }
 
-.slogan {
-    @extend .text-success;
+#banner {
+    @extend .mt-24, .text-success;
 
+    line-height: 1.2;
     font-weight: 100;
+    width: 100%;
 
     @if $isIndex {
-        @extend .font-xxxl, .mb-48;
+        @extend .mb-48;
+
+        @include rem('font-size', 48);
     }
     @if $isPage {
         @include rem('font-size', 41);
+    }
+    @include mq-max(480px) {
+        font-size: rem(34);
     }
 }
 
@@ -137,10 +175,20 @@
     position: relative;
     z-index: z(footer);
 
+    // 本次專案
+    @include mq(desktop) {
+        min-height: $footer-desktop-height;
+        margin-top: -($footer-desktop-height);
+    }
     .wrap {
         padding-top: 54px;
         padding-bottom: 48px;
         position: relative;
+
+        @include mq-max(break(desktop, -1)) {
+            padding-top: 32px;
+            padding-bottom: 24px;
+        }
     }
 
     a {
@@ -150,40 +198,82 @@
             @extend .text-primary;
         }
     }
+
+    hr {
+        margin: 12px 0 16px;
+        border-color: #625432;
+    }
 }
 
 .copyright {
-    @include absolute(right 0 top 72px);
+    position: absolute;
+
+    @include mq(desktop) {
+        right: 16px;
+        top: 72px;
+    }
+    @include mq(wide) {
+        right: 0;
+    }
+    @include mq-max(break(desktop, -1)) {
+        left: 120px;
+        top: 50px;
+        text-align: left;
+    }
 }
 
 .foot {
     &-slogan {
+        $size: 39;
+        $height: 225px;
+
         color: #333;
-        line-height: 227px;
+        line-height: 1.2;
         letter-spacing: 4px;
         border-bottom: 2px solid #fff;
+        padding-top: ($height - ($size*1.2))/2;
+        padding-bottom: ($height - ($size*1.2))/2;
 
         background: color() url(#{$img-path}/foot-bg.gif) 120% center no-repeat;
 
-        @include rem('font-size', 39);
+        @include rem('font-size', $size);
+
+        @include mq-max(break(desktop, -1)) {
+            $height-s: 140px;
+
+            background-size: cover;
+            background-position: center center;
+            padding: ($height-s - ($size*1.2))/2 16px;
+        }
     }
     &-logo {
-        @include text-pic('foot-logo.gif', $height: 67px, $seat: 40px 0);
+        @include text-pic('foot-logo.gif', $height: 67px);
+        @include mq(desktop) {
+            background-position: 40px 0;
+        }
     }
 
     &-contact {
         @extend .font-sm;
 
+        @include mq-max(break(desktop, -1)) {
+            margin-top: 24px;
+        }
+
         p {
             line-height: 1.85;
             letter-spacing: .05em;
+
+            @include mq-max(break(tablet, -1)) {
+                margin-bottom: 8px;
+            }
         }
         em {
             @extend .inline-block, .text-center, .mr-8;
 
             $size: 22px;
 
-            border: 1px solid $border-color;
+            border: 1px solid #625432;
             font-style: normal;
             line-height: $size;
 
@@ -198,6 +288,7 @@
     }
 
     &-nav {
+        @extend .mb-16;
         a {
             &:not(:last-child) {
                 @extend .pr-8, .mr-4;
@@ -208,15 +299,32 @@
 
     &-lawer {
         dt {
-            @extend .font-xxl, .text-primary;
+            @extend .text-primary;
             font-weight: 100;
             letter-spacing: 1px;
-            margin-top: -12px;
+
+            @include mq(phone) {
+                margin-top: -12px;
+                @include rem('font-size', 35);
+            }
+            @include mq-max(break(phone, -1)) {
+                font-size: rem(24);
+                margin-top: -4px;
+                float: none !important;
+            }
         }
         a {
-            @extend .ml-24, .mb-16;
-            letter-spacing: 2px;
             display: inline-block;
+            letter-spacing: 2px;
+
+            @include mq(phone) {
+                margin-left: 24px;
+                margin-bottom: 16px;
+            }
+            @include mq-max(break(phone, -1)) {
+                margin-right: 12px;
+                margin-bottom: 12px;
+            }
         }
     }
 }

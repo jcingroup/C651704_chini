@@ -219,9 +219,9 @@ mark {
   padding: .2em; }
 
 hr {
-  margin: 12px 0 16px;
+  margin: 2rem 0;
   border: 0;
-  border-top: 1px solid #625432; }
+  border-top: 1px solid #eee5dd; }
 
 p {
   margin: 0; }
@@ -231,7 +231,7 @@ p {
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted #625432; }
+  border-bottom: 1px dotted #eee5dd; }
 
 ol, ul, dl {
   margin-top: 0;
@@ -262,25 +262,25 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   max-width: 100%;
-  border-bottom: 1px solid #625432; }
+  border-bottom: 1px solid #eee5dd; }
   table.fixed {
     table-layout: fixed;
     word-wrap: break-word;
     word-break: break-all; }
 
 tbody + tbody {
-  border-top: 2px solid #625432; }
+  border-top: 2px solid #eee5dd; }
 
 th, td {
   text-align: center;
   vertical-align: middle;
   padding: 0.25rem 0.5rem;
-  border-top: 1px solid #625432; }
+  border-top: 1px solid #eee5dd; }
 
 .table-bordered {
-  border: 1px solid #625432; }
+  border: 1px solid #eee5dd; }
   .table-bordered th, .table-bordered td {
-    border: 1px solid #625432; }
+    border: 1px solid #eee5dd; }
   .table-bordered thead th, .table-bordered thead td {
     border-bottom-width: 2px; }
 

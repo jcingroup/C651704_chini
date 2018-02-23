@@ -156,21 +156,32 @@
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\page.css" />
     <Content Include="Content\css\vendor\open-iconic.css" />
+    <Content Include="Content\css\vendor\swiper.min.css" />
+    <Content Include="Content\css\vendor\themify-icons.css" />
     <Content Include="Content\css\vendor\typeahead.css" />
     <Content Include="Content\font\open-iconic\open-iconic.svg" />
     <Content Include="Content\font\themify-icons\themify.svg" />
+    <Content Include="Content\images\about-pic.jpg" />
+    <Content Include="Content\images\about-pic2.jpg" />
+    <Content Include="Content\images\about-pic3.jpg" />
     <Content Include="Content\images\foot-bg.gif" />
     <Content Include="Content\images\foot-logo.gif" />
     <Content Include="Content\images\index\logo.gif" />
     <Content Include="Content\images\index\ServiceBg.jpg" />
     <Content Include="Content\images\index\ServiceBg2.jpg" />
-    <Content Include="Content\images\lawyer-footBg.gif" />
-    <Content Include="Content\images\lawyer-headBg.gif" />
-    <Content Include="Content\images\lawyer-infoBg.gif" />
+    <Content Include="Content\images\lawyers\lawyer-footBg.gif" />
+    <Content Include="Content\images\lawyers\lawyer-headBg.gif" />
+    <Content Include="Content\images\lawyers\lawyer-infoBg.gif" />
+    <Content Include="Content\images\lawyers\lawyer-photo.gif" />
+    <Content Include="Content\images\lawyers\lawyer-photo2.gif" />
+    <Content Include="Content\images\lawyers\lawyer-photo3.gif" />
+    <Content Include="Content\images\lawyers\lawyer-photo4.gif" />
+    <Content Include="Content\images\lawyers\lawyer-photo5.gif" />
+    <Content Include="Content\images\lawyers\lawyers-otherBg.gif" />
     <Content Include="Content\images\logo.gif" />
     <Content Include="Content\images\service-law.jpg" />
     <Content Include="Content\images\service-scribe.jpg" />
-    <Content Include="Content\js\swiper\swiper.min.js" />
+    <Content Include="Content\js\swiper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -302,7 +313,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53529</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53529/</IISUrl>
+          <IISUrl>http://localhost:53530/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

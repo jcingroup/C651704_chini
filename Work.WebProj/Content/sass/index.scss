@@ -4,6 +4,8 @@
 $isIndex:                        true;
 $img-index:                      '../images/index';
 
+// $wrapper-b-spacing:              0;
+
 
 // import
 // ------------------------------------------------------------
@@ -31,9 +33,32 @@ $img-index:                      '../images/index';
 // main
 // ------------------------------------------------------------
 .main {
-    margin-bottom: 68px;
+    @extend .mb-48;
 }
+
 .card {
+    @extend .p-24;
+
+    @include mq(phone-plus) {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: -4px;
+
+        width: calc(50% - 18px);
+        min-width: 280px;
+    }
+    @include mq(desktop) {
+        @include grid(1, 4);
+    }
+
+    ~ .card {
+        @include mq(phone-plus) {
+            margin-left: 32px;
+        }
+        @include mq-max(break(phone-plus, -1)) {
+            margin-top: 32px;
+        }
+    }
 
     figcaption, img {
         @include transition(.5s);
@@ -57,6 +82,7 @@ $img-index:                      '../images/index';
         @include prefix(filter, blur(10px) brightness(.8));
         @include transform(translate(-50%,-50%) scale(2));
         @include prefix(transform-origin, center);
+        min-width: 100%;
     }
 
     &:hover {

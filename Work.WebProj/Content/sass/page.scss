@@ -22,6 +22,7 @@ $font-size-h2:           45px;
 @import "element/basic";
 @import "element/link";
 @import "element/type";
+@import "element/table";
 @import "element/btn";
 @import "element/util";
 
@@ -35,6 +36,13 @@ $font-size-h2:           45px;
 // main
 // ------------------------------------------------------------
 
+// == 簡介
+.about-info {
+    @include mq(tablet) {
+        padding-left: 32px;
+    }
+}
+
 // == 專業團隊
 .Lawyers #wrapper {
     padding-bottom: $footer-height;
@@ -45,25 +53,73 @@ $font-size-h2:           45px;
     &-head {
         @extend .py-48;
 
-        background: color(warning) url(#{$img-path}/lawyer-headBg.gif) center no-repeat;
+        background: color(warning) url(#{$img-path}/lawyers/lawyer-headBg.gif) center no-repeat;
         border-bottom: 2px solid #fff;
 
+        @include transition(.35s);
+
+        @include mq-max(break(desktop, -1)) {
+            background-size: cover;
+        }
+
         h1 { letter-spacing: 3px; }
+
+        &.fixed {
+            @extend .py-8;
+
+            width: 100%;
+            z-index: 4;
+
+            @include fixed(top 0);
+
+            h1 { display: none; }
+        }
     }
     &-nav {
         a {
+            display: inline-block;
             color: #876647;
+            line-height: 1.01;
             padding: 0 28px;
-            margin-right: -4px;
+            margin: 4px -4px;
 
             @include rem('font-size', 21);
+
+            @include mq-max(break(tablet, -1)) {
+                padding: 0 16px;
+            }
 
             &:not(:last-child) {
                 border-right: 1px solid #fff;
             }
 
-            &:hover, &:active, &.current {
+            &:hover, &:active, &.active {
                 @extend .text-info;
+            }
+        }
+    }
+    &-explain {
+        background: #fff url(#{$img-path}/lawyers/lawyers-otherBg.gif) center 14px no-repeat;
+
+        padding-top: 40px;
+        padding-bottom: 106px;
+
+        @include mq-max(break(tablet, -1)) {
+            padding: 40px 16px 50px;
+            background-position: center 0;
+        }
+
+        h3 {
+            @extend .text-primary, .mb-32;
+
+            letter-spacing: 12px;
+
+            @include rem('font-size', 41);
+
+            @include mq-max(break(tablet, -1)) {
+                font-size: rem(36);
+                letter-spacing: 2px;
+                margin-bottom: 20px;
             }
         }
     }
@@ -71,19 +127,30 @@ $font-size-h2:           45px;
 
 // 律師資料
 .lawyer {
-    background: #f5efe9 url(#{$img-path}/lawyer-footBg.gif) center bottom no-repeat;
+    background: #f5efe9 url(#{$img-path}/lawyers/lawyer-footBg.gif) center bottom no-repeat;
     border-bottom: 3px solid #fff;
     padding-bottom: 84px;
 
+    .pic {
+        img {
+            max-width: 100%;
+        }
+    }
     .intro {
-        @extend .mb-48, .pl-32;
+        @extend .mb-48;
+
+        @include mq(tablet) {
+            padding-left: 32px;
+        }
     }
 
     // 姓名+頭銜
     &-title {
-        @extend .font-xxl, .mt-0, .mb-24;
+        @extend .font-xxl, .mb-24;
 
-        margin-top: 76px;
+        @include mq(tablet) {
+            margin-top: 76px;
+        }
 
         span  {
             letter-spacing: 10px;
@@ -99,31 +166,47 @@ $font-size-h2:           45px;
     article {
         @extend .pt-48;
 
-        background: url(#{$img-path}/lawyer-infoBg.gif) center 90px no-repeat;
+        background: url(#{$img-path}/lawyers/lawyer-infoBg.gif) center 90px no-repeat;
         border-top: 1px solid #e8ddd3;
+
+        @include mq-max(break(tablet, -1)) {
+            background-position: right center;
+        }
     }
 
     &-info {
         dt {
-            @extend .mb-24;
+
             font-weight: 100;
             letter-spacing: 2px;
+
+            @include mq(tablet) {
+                margin-bottom: 24px;
+            }
         }
         p {
             @extend .mt-12
         }
+        &.text-right {
+            @include mq-max(break(tablet, -1)) {
+                text-align: left;
+            }
+        }
     }
 }
-
 
 // == 專業領域
 .service {
     &-law, &-scribe {
-        min-height: 600px;
-        vertical-align: top;
         background-repeat: no-repeat;
 
-        @include grid(3, 7);
+        @include mq(800px) {
+            display: inline-block;
+            vertical-align: top;
+            min-height: 600px;
+
+            @include grid(3, 7);
+        }
 
         p {
             @include rem('font-size', 17);
@@ -133,12 +216,43 @@ $font-size-h2:           45px;
             }
         }
     }
+    // 法務部
     &-law {
         background-image: url(#{$img-path}/service-law.jpg);
         background-position: 0 bottom;
+
+        @include mq-max(799px) {
+            padding-bottom: 160px;
+            margin-bottom: 24px;
+        }
     }
+    // 代書部
     &-scribe {
         background-image: url(#{$img-path}/service-scribe.jpg);
         background-position: right 0;
+
+        @include mq(800px) {
+            margin-left: 3%;
+        }
+    }
+}
+
+// == 聯絡我們
+#map {
+    height: 460px;
+    border: 1px solid color();
+}
+.contact-info {
+    @include mq(desktop) {
+        padding-left: 32px;
+    }
+}
+.contacts {
+    dt, dd {
+        @extend .mb-12;
+    }
+    dt {
+        @extend .text-right, .pr-12, .text-success;
+        width: 100px;
     }
 }

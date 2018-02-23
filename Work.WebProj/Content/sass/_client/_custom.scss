@@ -95,21 +95,4 @@
 
 .card {
     @extend .bg-white, .border;
-
-    @if $isIndex {
-        @extend .p-24;
-
-        display: inline-block;
-
-        @include grid(1, 4);
-
-        ~ .card {
-            margin-left: 2%;
-        }
-    }
-    @if $isPage {
-        ~ .card {
-            margin-left: 3%;
-        }
-    }
 }

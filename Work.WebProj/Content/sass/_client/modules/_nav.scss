@@ -23,11 +23,8 @@ $mobile-nav-height: 48px;
         height: $mobile-nav-height;
     }
 
-    #{$nav-root} {
-        display: inline-block;
-
-        @include transition(.35s);
-    }
+    // #{$nav-root} {
+    // }
 
     // 子選單
     @if $sub-nav-has {
@@ -160,19 +157,24 @@ $mobile-nav-height: 48px;
 
             // 本次專案
             height: 100%;
-            text-align: left;
-            padding: ($header-mobile-height - 18) 16px 16px 16px;
+            padding: 42px 16px 16px 16px;
 
             .js-mobile-body & {
                 opacity: 1;
                 visibility: visible;
             }
         }
+        @include mq(phone-plus, break($mobile-menu-bk, -1)) {
+            padding-top: 180px;
+        }
     }
 }
 
 .nav-item {
+    display: inline-block;
     letter-spacing: .5px;
+
+    @include transition(.35s);
 
     @include mq($mobile-menu-bk) {
         @include rem('font-size', 17px);
@@ -213,25 +215,21 @@ $mobile-nav-height: 48px;
     }
 
     @include mq-max(break($mobile-menu-bk, -1)) {
-        // font-size: rem(20);
-        // text-align: center;
-        // background-color: #fff;
-        // background-position: center 16px;
+        font-size: rem(25);
+        margin: 2% .5%;
+        padding: 8px 24px;
+        background: #fff;
+        border: 1px solid color();
 
-        // margin-top: 12px;
-        // width: 48.5%;
-        // padding-top: 48px;
-        // padding-bottom: 24px;
-
-        // &:nth-child(even) {
-        //     margin-left: 1.6%;
-        // }
+        &:hover, &:active, &.current {
+            background: color();
+            color: #fff;
+        }
     }
-
-    @include mq-max(break(phone, -1)) {
-        // &:nth-child(even) {
-        //     margin-left: .7%;
-        // }
+    @include mq-max(break(phone-plus, -1)) {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -247,29 +245,24 @@ $mobile-nav-height: 48px;
     .mobile-toggle {
         display: none;
         background: none;
-        position: relative;
         cursor: pointer;
         z-index: z(overlay) + 1;
 
         @include transition(.3s);
-
         @include mq-max(break($mobile-menu-bk,-1)) {
             display: block;
         }
 
-        // 本次專案
-        @extend .pull-right, .font-xxl, .text-primary;
-
-        top: 50%;
-
-        @include transform(translateY(-50%));
-
-        &:hover, &:active, &.active {
-            // @extend .bg-secondary;
-        }
         &:focus {
             box-shadow: none;
         }
+
+        // 本次專案
+        @extend .font-xl, .text-primary;
+
+        text-shadow: 1px 1px 0 rgba(#fff, .6);
+
+        @include fixed(right 10px top 10px);
     }
 }
 

@@ -7,18 +7,18 @@
 <header class="lawyers-head">
     <h1 class="mb-32 text-info">執業律師</h1>
     <nav class="lawyers-nav">
-        <a href="#p1" class="scroll current">呂理胡</a>
-        <a href="#p2" class="scroll">唐永洪</a>
-        <a href="#p3" class="scroll">張晶瑩</a>
-        <a href="#p4" class="scroll">楊雅馨</a>
-        <a href="#p5" class="scroll">呂浩瑋</a>
+        <a href="#p1">呂理胡</a>
+        <a href="#p2">唐永洪</a>
+        <a href="#p3">張晶瑩</a>
+        <a href="#p4">楊雅馨</a>
+        <a href="#p5">呂浩瑋</a>
     </nav>
 </header>
 
 <section id="p1" class="lawyer">
     <header class="wrap">
         <figure class="pic m-0 col-sm-6 col-md-5">
-            <img src="~/Content/images/Lawyers/pic m-0.jpg" alt="呂理胡">
+            <img src="~/Content/images/Lawyers/lawyer-photo.gif" alt="呂理胡">
         </figure>
         <div class="intro col-sm-6 col-md-7 text-left">
             <h3 class="lawyer-title">
@@ -66,7 +66,7 @@
 <section id="p2" class="lawyer">
     <header class="wrap">
         <figure class="pic m-0 col-sm-6 col-md-5">
-            <img src="~/Content/images/Lawyers/pic m-0.jpg" alt="唐永洪">
+            <img src="~/Content/images/Lawyers/lawyer-photo2.gif" alt="唐永洪">
         </figure>
         <div class="intro col-sm-6 col-md-7 text-left">
             <h3 class="lawyer-title">
@@ -103,7 +103,7 @@
 <section id="p3" class="lawyer">
     <header class="wrap">
         <figure class="pic m-0 col-sm-6 col-md-5">
-            <img src="~/Content/images/Lawyers/pic m-0.jpg" alt="張晶瑩">
+            <img src="~/Content/images/Lawyers/lawyer-photo3.gif" alt="張晶瑩">
         </figure>
         <div class="intro col-sm-6 col-md-7 text-left">
             <h3 class="lawyer-title">
@@ -145,7 +145,7 @@
 <section id="p4" class="lawyer">
     <header class="wrap">
         <figure class="pic m-0 col-sm-6 col-md-5">
-            <img src="~/Content/images/Lawyers/pic m-0.jpg" alt="楊雅馨">
+            <img src="~/Content/images/Lawyers/lawyer-photo4.gif" alt="楊雅馨">
         </figure>
         <div class="intro col-sm-6 col-md-7 text-left">
             <h3 class="lawyer-title">
@@ -188,7 +188,7 @@
 <section id="p5" class="lawyer">
     <header class="wrap">
         <figure class="pic m-0 col-sm-6 col-md-5">
-            <img src="~/Content/images/Lawyers/pic m-0.jpg" alt="呂浩瑋">
+            <img src="~/Content/images/Lawyers/lawyer-photo5.gif" alt="呂浩瑋">
         </figure>
         <div class="intro col-sm-6 col-md-7 text-left">
             <h3 class="lawyer-title">
@@ -228,7 +228,65 @@
     </article>
 </section>
 
-<footer class="lawyers-explain text-info font-xxl py-32 bg-white">
-    執行業務管轄區域設明
-    <small class="block font-xl text-secondary">金門、馬祖地區並無限制，但如欲委任於其他地區法院轄區可另行討論</small>
+<footer class="lawyers-explain text-info">
+    <h3>〔執行業務管轄區域說明〕</h3>
+    <small class="font-xl">金門、馬祖地區並無限制，但如欲委任於其他地區法院轄區可另行討論</small>
 </footer>
+
+@section scripts {
+    <script>
+        // scroll spy
+        $(document).ready(function(){
+            var sections = [];
+            var scrolled_id = false;
+            var id = false;
+            var $navbar = $('.lawyers-head'),
+                navbarOffset = $navbar.offset().top,
+                navbarHeight = $navbar.height(),
+                $navbar__links = $navbar.find('.lawyers-nav a');
+
+            $navbar__links.each(function(){
+                sections.push($($(this).attr('href')));
+            });
+
+            $navbar__links.click(function(e){
+                e.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top - $navbar.height()
+                }, 750);
+            });
+
+            $(window).scroll(function(e){
+                e.preventDefault();
+                var scrollTop = $(this).scrollTop() + ($(window).height() / 3);
+
+                if ( navbarOffset < $(this).scrollTop() ) {
+                    $navbar.addClass('fixed');
+                    $('body').css('padding-top', navbarHeight);
+                } else if ( navbarOffset > $(this).scrollTop() ) {
+                    $navbar.removeClass('fixed');
+                    $('body').css('padding-top', 0);
+                }
+
+                for(var i in sections){
+                    var section = sections[i];
+
+                    if(scrollTop > section.offset().top){
+                        scrolled_id = section.attr('id');
+                    }
+
+                    if(scrolled_id !== id){
+                        id = scrolled_id;
+
+                        $navbar__links.removeClass('active');
+
+                        $('a[href="#'+ id + '"]', $navbar).addClass('active');
+                    }
+                }
+            });
+
+            $(window).trigger('scroll');
+        });
+    </script>
+}

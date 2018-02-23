@@ -33,8 +33,7 @@ $font-family-base:           'Montserrat', \5FAE\8EDF\6B63\9ED1\9AD4,"微軟正�
 $link-color:                 color(secondary);
 $link-color-hover:           color();
 
-$border-color:               #625432;
-$hr-sapce:                   12px 0 16px;
+$border-color:               lighten(color(secondary), 66);
 
 
 // == layout
@@ -56,18 +55,19 @@ $logo-img:              'logo.gif' !default; // 'logo.gif' or false
 $logo-size:             95px 88px !default;
 
 // footer
-$footer-height:         510px !default;
+$footer-height:         420px !default;
+$footer-desktop-height: 510px !default; // this project
 $footer-bg:             #333 !default;
 $footer-color:          #e6e6e6 !default;
 
-// nav
+// menu
 $sub-nav-has:           false !default;         // 子選單
 $nav-root:              if($sub-nav-has, 'li > a', 'a') !default;
 
 // 行動版
 $mobile-menu-has:       true !default;
-$mobile-menu-bk:        'wide' !default;     // 從()螢幕寬度以下開始出現行動版選單
-$mobile-menu-bg:        rgba(#000, .7) !default;          // rgba(#fff,.95)
+$mobile-menu-bk:        'desktop' !default;     // 從()螢幕寬度以下開始出現行動版選單
+$mobile-menu-bg:        rgba(#fff, .85) !default;          // rgba(#fff,.95)
 $mobile-menu-width:     100% !default;
 $mobile-transition:     'opacity .5s' !default;    // push - left .35s; overlay - opacity 1s
 
