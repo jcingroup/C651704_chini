@@ -14,21 +14,25 @@ namespace Work.WebProj.Controllers
             return View();
         }
 
+        [Route("AboutUS")]
         public ActionResult AboutUs()
         {
             return View();
         }
 
+        [Route("Lawyers")]
         public ActionResult Lawyers()
         {
             return View();
         }
 
+        [Route("Service")]
         public ActionResult Service()
         {
             return View();
         }
 
+        [Route("ContactUS")]
         public ActionResult ContactUs()
         {
             return View();

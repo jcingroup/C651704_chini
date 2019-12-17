@@ -33,11 +33,11 @@
             @if (!ViewBag.IsFirstPage) {
                 <button class="mobile-toggle ti-menu" title="選單"></button>
                 <nav id="menu">
-                    <a href="~/Home/AboutUs" class='nav-item @(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
-                    <a href="~/Home/Lawyers" class='nav-item @(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a>
-                    <a href="~/Home/Service" class='nav-item @(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
+                    <a href="~/AboutUs" class='nav-item @(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
+                    <a href="~/Lawyers" class='nav-item @(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a>
+                    <a href="~/Service" class='nav-item @(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
                     <a href="https://lawyer4518.blogspot.tw/" class="nav-item" target="new" title="外連網頁,另開新視窗">BLOG</a>
-                    <a href="~/Home/ContactUs" class='nav-item @(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
+                    <a href="~/ContactUs" class='nav-item @(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
                 </nav>
             }
 
@@ -64,7 +64,7 @@
                 <article class="row foot-contact">
                     <p class="col-sm-5 col-md-3">6F' No.1 Chung-Yang W.Rd.Sec.1 'Chung-Li City' TAIWAN R.O.C</p>
                     <ul class="list-inline col-sm-7 col-md-4 push-md-1">
-                        <li><em class="circle">T</em>886-3-4222325</li>
+                        <li><em class="circle">T</em><a href="tel:+886-3-422-2325">886-3-4222325</a></li>
                         <li><em class="circle">F</em>886-3-4250813</li>
                         <li><em class="circle">E</em><a href="mailto:lawyer@chini.idv.tw">lawyer@chini.idv.tw</a></li>
                     </ul>
@@ -72,20 +72,21 @@
                 <hr>
                 <article class="row">
                     <nav class="foot-nav col-sm-5 col-md-4">
-                        <a href="~/Home/AboutUs" class='@(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
-                        @* <a href="~/Home/Lawyers" class='@(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a> *@
-                        <a href="~/Home/Service" class='@(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
+                        <a href="~/AboutUs" class='@(ViewBag.BodyClass == "AboutUs" ? "current" : "")'>簡介</a>
+                        @* <a href="~/Lawyers" class='@(ViewBag.BodyClass == "Lawyers" ? "current" : "")'>專業團隊</a> *@
+                        <a href="~/Service" class='@(ViewBag.BodyClass == "Service" ? "current" : "")'>專業領域</a>
                         <a href="https://lawyer4518.blogspot.tw/" target="new" title="外連網頁,另開新視窗">BLOG</a>
-                        <a href="~/Home/ContactUs" class='@(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
+                        <a href="~/ContactUs" class='@(ViewBag.BodyClass == "ContactUs" ? "current" : "")'>連絡我們</a>
                     </nav>
                     <dl class="foot-lawer col-sm-7 col-lg-5">
                         <dt class="pull-left">LAWER</dt>
                         <dd class="rest">
-                            @* <a href="~/Home/Lawyers#p1" class="scroll">呂理胡</a> *@
-                            <a href="~/Home/Lawyers#p2" class="scroll">唐永洪</a>
-                            @* <a href="~/Home/Lawyers#p3" class="scroll">張晶瑩</a> *@
-                            <a href="~/Home/Lawyers#p4" class="scroll">楊雅馨</a>
-                            @* <a href="~/Home/Lawyers#p5" class="scroll">呂浩瑋</a> *@
+                            @* <a href="~/Lawyers#p1" class="scroll">呂理胡</a>
+                            <a href="~/Lawyers#p3" class="scroll">張晶瑩</a>
+                            <a href="~/Lawyers#p5" class="scroll">呂浩瑋</a> *@
+
+                            <a href="~/Lawyers#p2" class="scroll">唐永洪</a>
+                            <a href="~/Lawyers#p4" class="scroll">楊雅馨</a>
                         </dd>
                     </dl>
                 </article>
